@@ -18,8 +18,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality-1, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality - 1, gildedRose.items[0].quality)
     }
 
 
@@ -38,8 +38,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality-2, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality - 2, gildedRose.items[0].quality)
     }
 
 
@@ -58,7 +58,7 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
         assertEquals(0, gildedRose.items[0].quality)
     }
 
@@ -78,7 +78,7 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
         assertEquals(item.quality, gildedRose.items[0].quality)
     }
 
@@ -123,8 +123,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality+1, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality + 1, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
 
@@ -146,8 +146,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality+2, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality + 2, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
 
@@ -170,7 +170,7 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
         assertEquals(item.quality, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
@@ -194,8 +194,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality+1, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality + 1, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
 
@@ -218,8 +218,8 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality+2, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality + 2, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
 
@@ -242,18 +242,18 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn-1, gildedRose.items[0].sellIn)
-        assertEquals(item.quality+3, gildedRose.items[0].quality)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality + 3, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
 
 
     @Test
-    fun `when updateQuality with a Backstage passes to a TAFKAL80ETC concert item quality of 5 and sellin equal to 0, should update quality to zero and decrease sellin 1`() {
+    fun `when updateQuality with a Backstage passes to a TAFKAL80ETC concert item quality of 5 and sellin equal to 0, should update quality to zero and decrease sellin ®1`() {
         val itemName = "Backstage passes to a TAFKAL80ETC concert"
         val item = Item(
                 name = itemName,
-                sellIn =0,
+                sellIn = 0,
                 quality = 5
         )
         val gildedRose = GildedRose(mutableListOf(item.copy()))
@@ -265,7 +265,7 @@ class GildedRoseTest {
         gildedRose.updateQuality()
 
         assertEquals(1, gildedRose.items.size)
-        assertEquals(item.sellIn -1, gildedRose.items[0].sellIn)
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
         assertEquals(0, gildedRose.items[0].quality)
         assertEquals(itemName, gildedRose.items[0].name)
     }
