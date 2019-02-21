@@ -1,7 +1,8 @@
-data class CommonItem(val item: Item)
+class CommonItem(override var item: Item) : CommonUpdateItem{
 
-fun CommonItem.updateItem() {
-    if(item.quality > 0) item.quality -= 1
-    if(item.quality > 0 && item.sellIn <0) item.quality -= 1
-    item.sellIn -= 1
+    override fun Item.updateQuality() {
+        if(quality > 0) quality -= 1
+        if(quality > 0 && sellIn <0) quality -= 1
+    }
 }
+

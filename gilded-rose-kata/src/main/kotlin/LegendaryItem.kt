@@ -1,5 +1,1 @@
-class LegendaryItem(val item: Item)
-
-fun LegendaryItem.updateItem() {
-
-}
+class LegendaryItem(var item: Item): LegendaryUpdateItem
