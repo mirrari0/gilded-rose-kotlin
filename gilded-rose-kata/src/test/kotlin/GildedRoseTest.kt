@@ -5,6 +5,20 @@ class GildedRoseTest {
 
 
     @Test
+    fun `when multiple items in the item list, will update all of them`() {
+        val itemOne = createItem()
+        val itemTwo = createItem(itemName="item two")
+        val gildedRose = GildedRose(mutableListOf(itemOne.copy(), itemTwo.copy()))
+        gildedRose.updateQuality()
+
+        assertEquals(itemOne.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(itemOne.quality - 1, gildedRose.items[0].quality)
+        assertEquals(itemTwo.sellIn - 1, gildedRose.items[1].sellIn)
+        assertEquals(itemTwo.quality - 1, gildedRose.items[1].quality)
+
+    }
+
+    @Test
     fun `when call update quantity for common item with sellIn and quality above zero, will decrement sellIn and quality by one`() {
         val item = createItem()
         val gildedRose = GildedRose(mutableListOf(item.copy()))
