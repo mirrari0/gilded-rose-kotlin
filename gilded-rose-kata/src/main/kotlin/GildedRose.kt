@@ -1,21 +1,30 @@
 class GildedRose(
         val items: List<Item>) {
 
-    val SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros"
-    val CONCERT = "Backstage passes to a TAFKAL80ETC concert"
-    val AGED_BRIE = "Aged Brie"
+
 
 
     fun updateQuality() {
         items.forEach {
-            if (AGED_BRIE == it.name) {
+            if (GildedRoseItem.AGED_BRIE.name == it.name) {
                 handleAgedBrie(it)
-            } else if (CONCERT == it.name) {
+            }
+            else if (GildedRoseItem.CONCERT.name == it.name) {
                 handleConcert(it)
-            } else if (SULFURAS_HAND_OF_RAGNAROS != it.name) {
+            }
+            else if (GildedRoseItem.CONJURED.name == it.name) {
+                handleConjured(it)
+            }
+            else if (GildedRoseItem.SULFURAS_HAND_OF_RAGNAROS.name != it.name) {
                 handleCommon(it)
             }
         }
+    }
+
+    private fun handleConjured(it:Item){
+        decrementQuality(it)
+        decrementQuality(it)
+        it.sellIn -=1
     }
 
     private fun handleCommon(it: Item) {
