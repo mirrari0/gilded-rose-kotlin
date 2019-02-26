@@ -13,7 +13,10 @@ class GildedRose(
                 handleConcert(it)
             }
             else if (GildedRoseItem.CONJURED.name == it.name) {
-                handleConjured(it)
+                handleCommon(
+                        it = it,
+                        amount = 2
+                )
             }
             else if (GildedRoseItem.SULFURAS_HAND_OF_RAGNAROS.name != it.name) {
                 handleCommon(it)
@@ -21,27 +24,17 @@ class GildedRose(
         }
     }
 
-    private fun handleConjured(it:Item){
-        decrementQuality(it)
-        decrementQuality(it)
-        it.sellIn -=1
-        if(it.sellIn < 0){
-            decrementQuality(it)
-            decrementQuality(it)
-        }
-    }
-
-    private fun handleCommon(it: Item) {
-        decrementQuality(it)
+    private fun handleCommon(it: Item, amount:Int = 1) {
+        decrementQuality(it, amount)
         it.sellIn = it.sellIn - 1
         if (it.sellIn < 0) {
-            decrementQuality(it)
+            decrementQuality(it, amount)
         }
     }
 
-    private fun decrementQuality(item: Item) {
+    private fun decrementQuality(item: Item, amount:Int) {
         if (item.quality > 0)
-            item.quality -= 1
+            item.quality -= amount
     }
 
 
