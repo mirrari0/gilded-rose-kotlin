@@ -25,6 +25,10 @@ class GildedRose(
         decrementQuality(it)
         decrementQuality(it)
         it.sellIn -=1
+        if(it.sellIn < 0){
+            decrementQuality(it)
+            decrementQuality(it)
+        }
     }
 
     private fun handleCommon(it: Item) {

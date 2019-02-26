@@ -144,6 +144,15 @@ class GildedRoseTest {
         assertEquals(item.quality - 2, gildedRose.items[0].quality)
     }
 
+    @Test
+    fun `when call update quantity for Conjured Item with a sellin less than zero, will decrease sell in by one and quality by four`() {
+        val item = createItem(itemName=GildedRoseItem.CONJURED.name)
+        val gildedRose = GildedRose(mutableListOf(item.copy()))
+        gildedRose.updateQuality()
+        assertEquals(item.sellIn - 1, gildedRose.items[0].sellIn)
+        assertEquals(item.quality - 2, gildedRose.items[0].quality)
+    }
+
     fun createItem(itemName: String = "Common Item Name", sellIn: Int = 12, quality: Int = 12): Item {
         return Item(itemName, sellIn, quality)
     }
